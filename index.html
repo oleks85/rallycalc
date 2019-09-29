@@ -6,117 +6,134 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rally Calculator</title>
-
+    <style>
+        .time {
+            background: #39b3d7;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <form>
-            <div class="form-group row">
-                <label for="recommendedAverageSpeed" class="col-sm-2 col-form-label">Recommended Average Speed</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="recommendedAverageSpeed" id="recommendedAverageSpeed" placeholder="Recommended Average Speed">
-                        <div class="input-group-append">
-                            <span class="input-group-text">km/h</span>
-                        </div>
+<div class="container">
+    <form>
+        <div class="form-group row">
+            <label for="recommendedAverageSpeed" class="col-sm-2 col-form-label">Start Time</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="time" class="form-control" name="startTime" id="startTime">
+                    <div class="input-group-append">
+                        <span class="input-group-text">hh:mm</span>
                     </div>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="point-0" class="col-sm-2 col-form-label">Point 0</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="tel" class="form-control" name="point0" id="point-0" placeholder="Point 0">
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
-                            <span class="input-group-text" id="p0Result">NaN</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="form-group row">
-                <label for="point-1" class="col-sm-2 col-form-label">Point 1</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="tel" class="form-control" name="point1" id="point-1" placeholder="Point 1">
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
-                            <span class="input-group-text" id="p1Result">NaN</span>
-                        </div>
+        </div>
+        <div class="form-group row">
+            <label for="recommendedAverageSpeed" class="col-sm-2 col-form-label">Recommended Average Speed</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="recommendedAverageSpeed" id="recommendedAverageSpeed" placeholder="Recommended Average Speed">
+                    <div class="input-group-append">
+                        <span class="input-group-text">km/h</span>
                     </div>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="point-2" class="col-sm-2 col-form-label">Point 2</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="tel" class="form-control" name="point2" id="point-2" placeholder="Point 2">
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
-                            <span class="input-group-text" id="p2Result">NaN</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="point-3" class="col-sm-2 col-form-label">Point 3</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="tel" class="form-control" name="point3" id="point-3" placeholder="Point 3">
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
-                            <span class="input-group-text" id="p3Result">NaN</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="point-4" class="col-sm-2 col-form-label">Point 4</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="tel" class="form-control" name="point4" id="point-4" placeholder="Point 4">
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
-                            <span class="input-group-text" id="p4Result">NaN</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="point-5" class="col-sm-2 col-form-label">Point 5</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="tel" class="form-control" name="point5" id="point-5" placeholder="Point 5">
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
-                            <span class="input-group-text" id="p5Result">NaN</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="point-6" class="col-sm-2 col-form-label">Point 6</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="tel" class="form-control" name="point6" id="point-6" placeholder="Point 6">
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
-                            <span class="input-group-text" id="p6Result">NaN</span>
-                        </div>
+        </div>
+        <div class="form-group row">
+            <label for="point-0" class="col-sm-2 col-form-label">Point 0</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="tel" class="form-control" name="point0" id="point-0" placeholder="Point 0">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="p0Result">00:00:00</span>
+                        <span class="input-group-text time" id="p0TimeResult">00:00:00</span>
                     </div>
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Calculate</button>
-            <input class="btn btn-secondary" type="reset" value="Reset">
-        </form>
-    </div>
+        </div>
+        <div class="form-group row">
+            <label for="point-1" class="col-sm-2 col-form-label">Point 1</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="tel" class="form-control" name="point1" id="point-1" placeholder="Point 1">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="p1Result">00:00:00</span>
+                        <span class="input-group-text time" id="p1TimeResult">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="point-2" class="col-sm-2 col-form-label">Point 2</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="tel" class="form-control" name="point2" id="point-2" placeholder="Point 2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="p2Result">00:00:00</span>
+                        <span class="input-group-text time" id="p2TimeResult">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="point-3" class="col-sm-2 col-form-label">Point 3</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="tel" class="form-control" name="point3" id="point-3" placeholder="Point 3">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="p3Result">00:00:00</span>
+                        <span class="input-group-text time" id="p3TimeResult">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="point-4" class="col-sm-2 col-form-label">Point 4</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="tel" class="form-control" name="point4" id="point-4" placeholder="Point 4">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="p4Result">00:00:00</span>
+                        <span class="input-group-text time" id="p4TimeResult">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="point-5" class="col-sm-2 col-form-label">Point 5</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="tel" class="form-control" name="point5" id="point-5" placeholder="Point 5">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="p5Result">00:00:00</span>
+                        <span class="input-group-text time" id="p5TimeResult">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="point-6" class="col-sm-2 col-form-label">Point 6</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <input type="tel" class="form-control" name="point6" id="point-6" placeholder="Point 6">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="p6Result">00:00:00</span>
+                        <span class="input-group-text time" id="p6TimeResult">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calculate</button>
+        <input class="btn btn-secondary" type="reset" value="Reset">
+    </form>
+</div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/2.3.2/moment-duration-format.js"></script>
 <script>
     $("form").submit(function(event) {
         var p0 = $("#point-0").val();
@@ -127,33 +144,52 @@
         var p5 = $("#point-5").val();
         var p6 = $("#point-6").val();
         var avgSpeed = $("#recommendedAverageSpeed").val();
+        var startTime = $("#startTime").val();
 
-        var p0ExactTime = calculateTimeMinutes(avgSpeed, p0);
-        var p1ExactTime = calculateTimeMinutes(avgSpeed, p1);
-        var p2ExactTime = calculateTimeMinutes(avgSpeed, p2);
-        var p3ExactTime = calculateTimeMinutes(avgSpeed, p3);
-        var p4ExactTime = calculateTimeMinutes(avgSpeed, p4);
-        var p5ExactTime = calculateTimeMinutes(avgSpeed, p5);
-        var p6ExactTime = calculateTimeMinutes(avgSpeed, p6);
+        var p0ExactTime = calculateTime(avgSpeed, p0);
+        var p1ExactTime = calculateTime(avgSpeed, p1);
+        var p2ExactTime = calculateTime(avgSpeed, p2);
+        var p3ExactTime = calculateTime(avgSpeed, p3);
+        var p4ExactTime = calculateTime(avgSpeed, p4);
+        var p5ExactTime = calculateTime(avgSpeed, p5);
+        var p6ExactTime = calculateTime(avgSpeed, p6);
 
-        $("#p0Result").text(p0ExactTime+" min:sec");
-        $("#p1Result").text(p1ExactTime+" min:sec");
-        $("#p2Result").text(p2ExactTime+" min:sec");
-        $("#p3Result").text(p3ExactTime+" min:sec");
-        $("#p4Result").text(p4ExactTime+" min:sec");
-        $("#p5Result").text(p5ExactTime+" min:sec");
-        $("#p6Result").text(p6ExactTime+" min:sec");
+        $("#p0Result").text(p0ExactTime);
+        $("#p1Result").text(p1ExactTime);
+        $("#p2Result").text(p2ExactTime);
+        $("#p3Result").text(p3ExactTime);
+        $("#p4Result").text(p4ExactTime);
+        $("#p5Result").text(p5ExactTime);
+        $("#p6Result").text(p6ExactTime);
+
+        var p0AstroTime = calculateAstroTime(startTime, p0ExactTime, true);
+        var p1AstroTime = calculateAstroTime(p0AstroTime, p1ExactTime);
+        var p2AstroTime = calculateAstroTime(p1AstroTime, p2ExactTime);
+        var p3AstroTime = calculateAstroTime(p2AstroTime, p3ExactTime);
+        var p4AstroTime = calculateAstroTime(p3AstroTime, p4ExactTime);
+        var p5AstroTime = calculateAstroTime(p4AstroTime, p5ExactTime);
+        var p6AstroTime = calculateAstroTime(p5AstroTime, p6ExactTime);
+
+        $("#p0TimeResult").text(p0AstroTime);
+        $("#p1TimeResult").text(p1AstroTime);
+        $("#p2TimeResult").text(p2AstroTime);
+        $("#p3TimeResult").text(p3AstroTime);
+        $("#p4TimeResult").text(p4AstroTime);
+        $("#p5TimeResult").text(p5AstroTime);
+        $("#p6TimeResult").text(p6AstroTime);
+
         event.preventDefault();
     });
 
-    function calculateTimeMinutes(avgSpeed, distance) {
-        var distanceKm = distance/1000;
-        var rawTime = distanceKm/avgSpeed*60;
-        var timeMinutes = Math.trunc(rawTime);
-        var timeSeconds = Math.trunc((rawTime % 1) * 60);
-        var exactTime = timeMinutes +":"+ timeSeconds;
+    function calculateTime(avgSpeed, distance) {
+        var distanceKm = distance / 1000;
+        var rawTime = distanceKm / avgSpeed * 60;
 
-        return exactTime;
+        return moment.duration(rawTime, 'minutes').format('HH:mm:ss' , {trim: false});
+    }
+
+    function calculateAstroTime(start, offset, isHHMM) {
+        return moment(start, isHHMM ? "HH:mm" : "HH:mm:ss").add(moment.duration(offset, "HH:mm:ss")).format('HH:mm:ss' , {trim: false});
     }
 </script>
 </body>
